@@ -1,0 +1,38 @@
+<h1>All our flats (<%= @flats.count %>)</h1>
+
+  <div class="cards">
+    <% @flats.each do |flat| %>
+    <div class="row">
+      <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+      <img src="https://images.unsplash.com/photo-1444419988131-046ed4e5ffd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"><%= flat.address %></p>
+          <div class="flex">
+            <div class="flex align-items-center">
+              <i class="fa-solid fa-euro-sign"></i>
+              <p class="card-text"><%= flat.price_per_night %></p>
+            </div>
+            <div class="flex align-items-center ms-3">
+              <i class="fa-solid fa-people-roof"></i>
+              <p class="card-text"><%= flat.number_of_guests %></p>
+            </div>
+          </div>
+          <div class="card-link"><%= link_to "More info", flat_path(flat) %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  </div>
+
+
+<%# <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> %>
